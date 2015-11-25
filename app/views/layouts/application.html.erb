@@ -8,6 +8,15 @@
 </head>
 <body>
 
+	<nav class="navbar navbar-inverse">
+		<div id="navbar">
+			<ul class="nav navbar-nav">
+			</ul>
+		</div>
+	</nav>
+<% flash.each do |key, value| %>
+  <%= content_tag :div, value, class: "flash alert alert-#{key}" %>
+<% end %>
 <%= yield %>
 
 </body>

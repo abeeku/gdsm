@@ -6,6 +6,23 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+ config.app_domain = "http://localhost:3000" #TODO
+
+ #Email
+ config.action_mailer.delivery_method = :smtp
+ config.action_mailer.perform_deliveries = true
+ #config.action_mailer.default_url_options = { host: config.app_domain }
+ config.action_mailer.smtp_settings = {
+   address: 'smtp.gmail.com', #TODO
+   port: '587',
+   enable_starttls_auto: true,
+   username: 'someuser', #TODO,
+   password: 'somepass', #TODO
+   authentication: :plain,
+   domain: 'somedomain.com' #TODO
+ }
+
+
   # Do not eager load code on boot.
   config.eager_load = false
 
@@ -18,6 +35,8 @@ Rails.application.configure do
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
+
+ config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load

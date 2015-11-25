@@ -8,9 +8,17 @@ group :production do
   gem 'pg'
 end
 
+gem 'bootstrap-sass'
+
 group :development, :test do
   gem 'sqlite3'
 end
+
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
